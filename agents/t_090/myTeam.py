@@ -45,16 +45,11 @@ def createTeam(firstIndex, secondIndex, isRed,
 # Agents #
 ##########
 
+# The maximum number of food carrying before deposit
 MAX_CAPACITY = 4
 
 class AttackAgent(CaptureAgent):
-  """
-  A Dummy agent to serve as an example of the necessary agent structure.
-  You should look at baselineTeam.py for more details about how to
-  create an agent as this is the bare minimum.
-  """
 
-  # Reference: baselineTeam.py
   def registerInitialState(self, gameState):
     CaptureAgent.registerInitialState(self, gameState)
     self.carrying = 0
@@ -64,7 +59,6 @@ class AttackAgent(CaptureAgent):
     self.height = gameState.data.layout.height
     self.width = gameState.data.layout.width
 
-  # Reference: baselineTeam.py
   def getClosestPos(self, gameState, pos_list):
     min_length = 9999
     min_pos = None
@@ -77,7 +71,6 @@ class AttackAgent(CaptureAgent):
         min_pos = pos
     return min_pos
 
-  # Reference: baselineTeam.py
   def getBoundary(self, gameState):
     boundary_location = []
     height = gameState.data.layout.height
@@ -91,7 +84,6 @@ class AttackAgent(CaptureAgent):
         boundary_location.append((j, i))
     return boundary_location
 
-  # Reference: baselineTeam.py
   def aStarSearch(self, problem):
     """Search the node that has the lowest combined cost and heuristic first."""
 
@@ -373,7 +365,6 @@ class AttackAgent(CaptureAgent):
 foodGrid_record = []
 class DefendAgent(CaptureAgent):
 
-  # Reference: baselineTeam.py
   def registerInitialState(self, gameState):
     CaptureAgent.registerInitialState(self, gameState)
     self.carrying = 0
@@ -383,7 +374,6 @@ class DefendAgent(CaptureAgent):
     self.height = gameState.data.layout.height
     self.width = gameState.data.layout.width
 
-  # Reference: baselineTeam.py
   def getClosestPos(self, gameState, pos_list):
     min_length = 9999
     min_pos = None
@@ -396,7 +386,6 @@ class DefendAgent(CaptureAgent):
         min_pos = pos
     return min_pos
 
-  # Reference: baselineTeam.py
   def getBoundary(self, gameState):
     boundary_location = []
     height = gameState.data.layout.height
@@ -410,7 +399,6 @@ class DefendAgent(CaptureAgent):
         boundary_location.append((j, i))
     return boundary_location
 
-  # Reference: baselineTeam.py
   def aStarSearch(self, problem):
     """Search the node that has the lowest combined cost and heuristic first."""
 
@@ -496,7 +484,6 @@ class DefendAgent(CaptureAgent):
 
     return first_layer + second_layer + third_layer
 
-  # Reference: baselineTeam.py
   def getFurthestPos(self, gameState, pos_list):
     max_length = -1
     max_pos = None
@@ -613,7 +600,6 @@ class DefendAgent(CaptureAgent):
         self.carrying = 0
       return path[0]
 
-# Reference: baselineTeam.py
 class PositionSearchProblem:
   """
   It is the ancestor class for all the search problem class.
