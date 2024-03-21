@@ -90,3 +90,50 @@ Furthermore, this implementation lacks of predicting the moves of the opponent, 
 
 Given these constraints, it would be advisable to employ techniques where agents can autonomously determine their actions based on learning through trial and error. The agents can deal with the trade-off between exploration and exploitation to discover better strategies over time. This way, the agent can continuously evolve with minimal manual programming.
 
+# Evolution of the approach
+
+### Initial Strategy
+
+In the preliminary design, when the attack agent is on home side, the target is to simply reach the boundary.
+However, after testing on the server, it can be observed that certain staff team is designed to wait on the border and capture our attack agent.
+Thus, when the attack agent is moving toward the boundary, it should look for the locations of the observable opponents.
+
+![c1a7f4c9-678a-49ca-9150-baad2474d1a9](https://github.com/COMP90054-2023s2/a3-team90/assets/142127312/1c79c11d-02e3-41f2-9c2b-e7975991b944)
+
+In addition, the position to be avoided was set to be the exact location of the opponent in the initial implementation. Nevertheless, since the opponent is moving dynamically, it is likely that our agent will still run into the opponent even with this strategy in place. Hence, the agent should also record the surrounding locations and prevent clashing with the opponent.
+
+![e3549297-3247-4632-a4c6-be8f3e4e6b34](https://github.com/COMP90054-2023s2/a3-team90/assets/142127312/e66fcb4f-6ff3-487e-a8a5-d41a9cd4069e)
+
+
+#### Competition results: Games - 18-1-21 | Percentile - 45%
+
+![18](https://github.com/COMP90054-2023s2/a3-team90/assets/142127312/1f5215b8-0f8c-4c88-ae5d-db4b380bff33)
+
+
+
+### Revised Strategy
+
+When an attack agent is moving toward the boundary, it would iterate over the opponent indices to see if there is an observable opponent in enemy territory. If so, it would change the entering position to avoid directly clashing with the opponent.
+
+![5b37fc96-107f-4775-83e5-aca565ab4a46](https://github.com/COMP90054-2023s2/a3-team90/assets/142127312/16518df5-0c70-4c06-9ef1-142f66aa740f)
+
+Due to the opponent's dynamic movement, it would be ideal to record proximity locations of the opponent instead of just the exact position of the opponent.
+When the position of the opponent is observable, the agent will record three layers of locations and allocate the respective cost values in these locations as stated in the [previous section](AI-Method-1#Application).
+
+For the defend agent, it would mark three layers of surrounding positions and maintain distance with opponent when the opponent has consumed a capsule.
+However, it would only steer clear of the positions in the red layer when the scared timer is about to expire. As a result, the defend agent can more efficiently deter the opponent from scoring by implementing this strategy.
+
+![f9496f1e-0b8c-4fb5-b51a-df6cf35f8456](https://github.com/COMP90054-2023s2/a3-team90/assets/142127312/1108dfb8-2870-4adb-8126-5863a069f533)
+
+#### Competition results: Games - 27-1-21 | Percentile - 67.5%
+
+![27](https://github.com/COMP90054-2023s2/a3-team90/assets/142127312/af7840c1-c1a4-46b6-818d-a15eb3b4cefd)
+
+
+#### Strategy summary
+
+- Check opponent position when crossing boundary.
+
+- Record the surrounding locations of the opponent (i.e. three layers of positions) and allocate corresponding cost values.
+
+- For defend agent, adjust the distance maintained with the opponent to capture the opponent more effectively.
