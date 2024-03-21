@@ -137,3 +137,15 @@ However, it would only steer clear of the positions in the red layer when the sc
 - Record the surrounding locations of the opponent (i.e. three layers of positions) and allocate corresponding cost values.
 
 - For defend agent, adjust the distance maintained with the opponent to capture the opponent more effectively.
+
+
+# Conclusions and Reflections
+
+### Challenges  
+
+- **Limitation**: Given that this method cannot anticipate the opponent's movements, executing certain strategies can be challenging. For example, entering a dead end can be risky, especially when the agent is chased by the opponent. Because this approach doesn't predict or identify patterns in the opponent's movements, the agent might inadvertently end up in a dead end and get caught by the opponent.
+
+- **Requires Thorough Consideration**: The method requires the designer consider thoroughly and manually set target positions. There is a chance that certain conditions might be neglected. Much of the progress in this approach came from analyzing the replays and seeking for solutions. However, this approach may not be effective due to the fact that many perspectives may still be overlooked.
+
+### Conclusions and Learnings
+Implementing the A* Heuristic Search method is relatively straightforward. The designer is able to readily modify the values and observe the adjustments made by the agents. By thoroughly analyzing various scenarios, the designer can construct a robust strategy tree, and the agents may achieve a decent winning percentage against the staff team. However, it requires the designer to hand-code the plans for the agents to execute. It is likely that certain conditions may be neglected, and the plans could be suboptimal. As a result, it would be ideal to employ techniques where agents can autonomously determine their actions based on learnings, and apply general techniques for autonomy.
