@@ -1,7 +1,7 @@
 # Pacman Project (UoM COMP90054 Contest Project - Team 90)
 
 The AI-related techniques that have been implemented to develop the autonomous agent teams is the ***<u>Search Algorithm (A\* Heuristic Search)***.
-The technique is employed to create an agent teams of attack agent and defend agent to compete against the staff teams.
+The technique is employed to create an agent team of attack agent and defend agent to compete against the staff teams.
 The approach is systematically designed by analyzing the problem comprehensively. The advantages and challenges of the design are noted in the respective sections.
 Furthermore, possible future improvements for each technique are discussed.
 The performance of each technique is analyzed and evaluated by playing against the staff teams. 
