@@ -32,7 +32,7 @@ The AI technique employed in Method 1 is the A* Heuristic Search Algorithm. The 
 
 The transition function identifies potential next states and assesses their value by calculating the related cost. If the next location is a wall or a position to be avoided, a substantial cost would be assigned. Otherwise, the agent would transition to the next state with the corresponding cost. Lastly, the heuristic function calculates the Manhattan distance between the current state and the goal position. The agent would utilise a combination of the cost and heuristic value in order to determine and discover the subsequent node.
 
-# Table of Contents
+### Table of Contents
 - [Governing Strategy Tree](#governing-strategy-tree)
   * [Motivation](#motivation)
   * [Application](#application)
@@ -41,7 +41,7 @@ The transition function identifies potential next states and assesses their valu
      - [Disadvantages](#disadvantages)
   * [Future improvements](#future-improvements)
 
-## Governing Strategy Tree  
+### Governing Strategy Tree  
 
 <img src="https://github.com/COMP90054-2023s2/a3-team90/assets/142127312/31e6546a-8dee-487d-bf86-e60091a34376" width="800">
 
