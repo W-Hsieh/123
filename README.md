@@ -1,23 +1,14 @@
-# Assignment 3: Pacman Project
+# Pacman Project (UoM COMP90054 Contest Project - Team 90)
 
-You must read fully and carefully the assignment specification and instructions detailed in this file. You are NOT to modify this file in any way.
-
-* **Course:** [COMP90054 AI Planning for Autonomy](https://handbook.unimelb.edu.au/subjects/comp90054) @ Semester 2, 2023
-* **Instructor:** Dr. Nir Lipovetzky and Prof. Adrian Pearce
-* **Deadline Team Registration:** Monday 18th September, 2023 @ 10:00 (start of Week 9)
-* **Deadline Preliminary Agent & Individual SELF-EV Submission:** Monday 2nd October, 2023 @ 10:00 (start of Week 10)
-* **Deadline Code, Wiki report & Group SELF-EV final Submission:** Friday 20th October, 2023 @ 10:00 (end of Week 12)
-* **Course Weight:** 35% total, comprising 10% (preliminary competition) + 10% (final competition) + 15% (Wiki)
-* **Assignment type:**: Groups of 3 (not 2 or 4!)
-* **Learning outcomes covered:** 1-5
+The AI-related techniques that have been implemented to develop the autonomous agent teams is the ***<u>Search Algorithm (A\* Heuristic Search)***
+The technique is employed to create an agent teams of attack agent and defend agent to compete against the staff teams.
+The approach is systematically designed by analyzing the problem comprehensively. The advantages and challenges of the design are noted in the respective sections.
+Furthermore, possible future improvements for each technique are discussed.
+The performance of each technique is analyzed and evaluated by playing against the staff teams. 
 
  <p align="center">
     <img src="img/capture_the_flag.png" alt="Picture of Pacman board" width="600">
  </p>
-
-The purpose of this project is to implement an autonomous agent that can play the game **PACMAN Capture the Flag** and compete in the UoM COMP90054-2023 Pacman competition:
-
- **Please read carefully the rules of the [PACMAN Capture the Flag game](http://ai.berkeley.edu/contest.html)**. Pacman can be understood as a deterministic, two-player game. Understanding the results and different strategies is important for designing a good agent for this project. Additional technical information on the contest project and how to get started can be found in file [CONTEST.md](CONTEST.md).
 
 ### Table of contents
 
